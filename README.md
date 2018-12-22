@@ -5,6 +5,8 @@
  * QGC -> Mavlink -> Subscribe
 
 ## 환경
- * > git clone https://github.com/PX4/Firmware
- * > git checkout v1.8.2
- 
+```console
+ > git clone https://github.com/PX4/Firmware
+ > git checkout v1.8.2
+```
+
