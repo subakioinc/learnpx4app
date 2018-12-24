@@ -48,7 +48,7 @@ Rectangle {
 ```
 # mavlink module
  * mavlink_receiver.cpp
-   ```c++
+```c++
 void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const T &cmd_mavlink,
 		const vehicle_command_s &vehicle_command)
 {
@@ -68,4 +68,4 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 	}
     //...
 }   
-   ```
+```
