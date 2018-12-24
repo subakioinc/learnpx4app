@@ -49,6 +49,19 @@ Rectangle {
 # mavlink module
  * mavlink_receiver.cpp
 ```c++
+//추가
+#include <px4_config.h>
+#include <px4_tasks.h>
+#include <px4_posix.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <poll.h>
+#include <string.h>
+#include <math.h>
+#include <uORB/uORB.h>
+#include <uORB/topics/etri_report.h>
+//
+
 void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const T &cmd_mavlink,
 		const vehicle_command_s &vehicle_command)
 {
@@ -57,6 +70,7 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 	bool send_ack = true;
 	uint8_t result = vehicle_command_ack_s::VEHICLE_RESULT_ACCEPTED;
 
+	// 
 	if (cmd_mavlink.command == 20010) {
 	 	PX4_INFO("I got message");
 	    struct etri_report_s raw;
