@@ -46,3 +46,26 @@ Rectangle {
     }
 }
 ```
+# mavlink module
+ * mavlink_receiver.cpp
+   ```c++
+void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const T &cmd_mavlink,
+		const vehicle_command_s &vehicle_command)
+{
+	bool target_ok = evaluate_target_ok(cmd_mavlink.command, cmd_mavlink.target_system, cmd_mavlink.target_component);
+
+	bool send_ack = true;
+	uint8_t result = vehicle_command_ack_s::VEHICLE_RESULT_ACCEPTED;
+
+	if (cmd_mavlink.command == 20010) {
+	 	PX4_INFO("I got message");
+	    struct etri_report_s raw;
+    	memset(&raw, 0, sizeof(raw));
+	    orb_advert_t etri_pub=orb_advertise(ORB_ID(etri_report), &raw);
+		raw.x = 100;
+		raw.y = 200;
+		orb_publish(ORB_ID(etri_report), etri_pub, &raw);
+	}
+    //...
+}   
+   ```
