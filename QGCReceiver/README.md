@@ -59,7 +59,7 @@ Rectangle {
 #include <string.h>
 #include <math.h>
 #include <uORB/uORB.h>
-#include <uORB/topics/etri_report.h>
+#include <uORB/topics/subak_info.h>
 //
 
 void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const T &cmd_mavlink,
