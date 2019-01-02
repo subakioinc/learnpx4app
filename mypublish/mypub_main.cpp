@@ -8,7 +8,7 @@
 #include <math.h>
 
 #include <uORB/uORB.h>
-#include <uORB/topics/etri_report.h>
+#include <uORB/topics/subak_info.h>
 
 extern "C" __EXPORT int mypub_main(int argc, char *argv[]);
 
@@ -16,14 +16,14 @@ int mypub_main(int argc, char *argv[])
 {
 	PX4_INFO("mypub start!");
 
-	struct etri_report_s raw;
+	struct subak_info_s raw;
 	memset(&raw, 0, sizeof(raw));
-	orb_advert_t etri_pub = orb_advertise(ORB_ID(etri_report), &raw);
+	orb_advert_t subak_pub = orb_advertise(ORB_ID(subak_info), &raw);
 
 	for (int i = 0; i < 1000; i++) {
 		raw.x++;
 		raw.y++;
-		orb_publish(ORB_ID(etri_report), etri_pub, &raw);
+		orb_publish(ORB_ID(subak_info), subak_pub, &raw);
 		usleep(500000);
 	}
 
