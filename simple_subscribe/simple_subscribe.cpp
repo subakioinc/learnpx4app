@@ -1,10 +1,3 @@
-﻿/**
- * @file mypub_main.cpp
- * Minimal application example for PX4 autopilot
- *
- * @author jeyong <jeyong@subak.io>
- */
-
 #include <px4_config.h>
 #include <px4_tasks.h>
 #include <px4_posix.h>
@@ -17,9 +10,9 @@
 #include <uORB/uORB.h>
 #include <uORB/topics/sensor_combined.h>
 
-extern "C" __EXPORT int mysubscribe_main(int argc, char *argv[]);
+extern "C" __EXPORT int simple_subscribe_main(int argc, char *argv[]);
 
-int mysubscribe_main(int argc, char *argv[])
+int simple_subscribe_main(int argc, char *argv[])
 {
 	PX4_INFO("Start mysub!");
 
