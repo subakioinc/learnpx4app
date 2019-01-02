@@ -28,13 +28,13 @@ Rectangle {
         spacing: ScreenTools.defaultFontPixelHeight
 
         QGCButton {
-            text: "Set Home to current position"
+            text: "COMMAND_LONG : 20010 command"
             // Arguments to CustomCommandWidgetController::sendCommand (MAVLink COMMAND_LONG)
             //   command id
             //   component id
             //   confirmation
             //   param 1-7
-            onClicked: controller.sendCommand(179, 50, 0, 1, 0, 0, 0, 0, 0, 0)
+            onClicked: controller.sendCommand(20010, 50, 0, 1, 0, 0, 0, 0, 0, 0)
         }
 
         // The FactTextField control is bound to the specified parameter. Note that there is no validation.
