@@ -71,14 +71,15 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 	uint8_t result = vehicle_command_ack_s::VEHICLE_RESULT_ACCEPTED;
 
 	// 
-	if (cmd_mavlink.command == 20010) {
-	 	PX4_INFO("I got message");
-	    struct etri_report_s raw;
+	if(cmd_mavlink.command == 20010) {
+		PX4_INFO("I got message");
+	    struct subak_info_s raw;
     	memset(&raw, 0, sizeof(raw));
-	    orb_advert_t etri_pub=orb_advertise(ORB_ID(etri_report), &raw);
+	    orb_advert_t subak_pub=orb_advertise(ORB_ID(subak_info), &raw);
 		raw.x = 100;
 		raw.y = 200;
-		orb_publish(ORB_ID(etri_report), etri_pub, &raw);
+		orb_publish(ORB_ID(subak_info), subak_pub, &raw);
+		return ;
 	}
     //...
 }   
