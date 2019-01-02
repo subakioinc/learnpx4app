@@ -4,7 +4,6 @@
  *
  * @author jeyong <jeyong@subak.io>
  */
-
 #include <px4_config.h>
 #include <px4_tasks.h>
 #include <px4_posix.h>
@@ -43,7 +42,7 @@ int mysub_main(int argc, char *argv[])
 				/* copy sensors raw data into local buffer */
 				orb_copy(ORB_ID(subak_info), mysub_fd, &raw);
 
-				PX4_INFO("Get ETRI REPORT : %d, %d", raw.x, raw.y);
+				PX4_INFO("Get SUBAK_INFO : %d, %d", raw.x, raw.y);
 
 			}
 		}	
