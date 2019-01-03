@@ -14,3 +14,4 @@ int simple_cpp_app_main(int argc, char *argv[])
     PX4_INFO("Hello World!");
     return OK;
 }
+
