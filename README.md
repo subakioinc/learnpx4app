@@ -2,7 +2,7 @@
  * Hello World
  * Subscribe
  * Publish
- * QGC -> Mavlink -> Subscribe [이동][./QGCReceiver/README.md]
+ * QGC -> Mavlink -> Subscribe [이동][QGCReceiver/README.md]
 
 ## 환경
 ```console
