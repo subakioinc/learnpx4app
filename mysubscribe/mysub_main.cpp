@@ -14,7 +14,7 @@
 #include <math.h>
 
 #include <uORB/uORB.h>
-#include <uORB/topics/subak_info.h>
+#include <uORB/topics/mission_subak.h>
 
 extern "C" __EXPORT int mysub_main(int argc, char *argv[]);
 
@@ -22,7 +22,7 @@ int mysub_main(int argc, char *argv[])
 {
         PX4_INFO("Start mysub!");
 
-	int mysub_fd = orb_subscribe(ORB_ID(subak_info));
+	int mysub_fd = orb_subscribe(ORB_ID(mission_subak));
 
 	px4_pollfd_struct_t fds{};
 	fds.fd = mysub_fd;
@@ -38,9 +38,9 @@ int mysub_main(int argc, char *argv[])
 			PX4_ERR("ERROR return value from poll()");
 		} else {
 			if (fds.revents & POLLIN) {
-				struct subak_info_s raw;
+				struct mission_subak_s raw;
 				/* copy sensors raw data into local buffer */
-				orb_copy(ORB_ID(subak_info), mysub_fd, &raw);
+				orb_copy(ORB_ID(mission_subak), mysub_fd, &raw);
 
 				PX4_INFO("Get SUBAK_INFO : %d, %d", raw.x, raw.y);
 
