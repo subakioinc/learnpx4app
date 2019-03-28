@@ -4,6 +4,4 @@
     STACK_MAIN 2000
     SRCS
         simple_cpp_app.cpp
-    DEPENDS
-        platforms__common
     )
