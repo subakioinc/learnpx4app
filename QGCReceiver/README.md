@@ -2,6 +2,10 @@
  * Widgets -> Custom Command
  * 'Load Custom Qml file' 버튼
  * 아래 파일 : mycustom.qml
+ * mysubmodule_subscribe 실행
+```console
+> mysubmodule_subscribe start
+```
 
 ```qml
 import QtQuick 2.2
@@ -47,21 +51,16 @@ Rectangle {
 }
 ```
 # mavlink module
+ * mavlink_receiver.h
+```c++
+#include <uORB/topics/mission_subak.h>
+
+orb_advert_t _mission_subak_pub{nullptr};
+
+```
  * mavlink_receiver.cpp
 ```c++
-//추가
-#include <px4_config.h>
-#include <px4_tasks.h>
-#include <px4_posix.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <poll.h>
-#include <string.h>
-#include <math.h>
-#include <uORB/uORB.h>
-#include <uORB/topics/subak_info.h>
-//
-
+template <class T>
 void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const T &cmd_mavlink,
 		const vehicle_command_s &vehicle_command)
 {
@@ -70,17 +69,16 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 	bool send_ack = true;
 	uint8_t result = vehicle_command_ack_s::VEHICLE_RESULT_ACCEPTED;
 
-	// 
-	if(cmd_mavlink.command == 20010) {
-		PX4_INFO("I got message");
-	    struct subak_info_s raw;
-    	memset(&raw, 0, sizeof(raw));
-	    orb_advert_t subak_pub=orb_advertise(ORB_ID(subak_info), &raw);
-		raw.x = 100;
-		raw.y = 200;
-		orb_publish(ORB_ID(subak_info), subak_pub, &raw);
-		return ;
+	if(cmd_mavlink.command == 2011){
+		int instance_id = 0;
+		struct mission_subak_s raw = {};
+		raw.x = 33;
+		raw.y = 22;
+		orb_publish_auto(ORB_ID(mission_subak), &_mission_subak_pub, &raw, &instance_id, ORB_PRIO_HIGH);
+		PX4_INFO("I received command from QGC!!! 2011");
 	}
-    //...
-}   
+	if (!target_ok) {
+		acknowledge(msg->sysid, msg->compid, cmd_mavlink.command, vehicle_command_ack_s::VEHICLE_RESULT_FAILED);
+		return;
+	}
 ```
