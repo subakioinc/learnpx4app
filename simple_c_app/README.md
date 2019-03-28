@@ -2,12 +2,12 @@
  * simple_c_app.c 파일 생성
  * CMakeLists.txt 생성
  * simple c App을 빌드 되도록 추가
- * cmake/configs/nuttx_px4fmu-v3_default.cmake
-   * 맨 마지막 줄에 examples/simple_c_app 추가
+ * Firmware/boards/px4/fmu-v3/default.cmake
+   * 맨 마지막 줄에 simple_c_app 추가
 # 확인
  * firmward upload
 ```console
-jeyong@bar:~$ make px4fmu-v3_default upload
+jeyong@bar:~$ make px4_fmu-v3 upload
 ```
  * system console
 ```console
