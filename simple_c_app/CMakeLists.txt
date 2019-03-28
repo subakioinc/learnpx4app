@@ -4,6 +4,4 @@ px4_add_module(
     STACK_MAIN 2000
     SRCS
         simple_c_app.c
-    DEPENDS
-        platforms__common
     )
