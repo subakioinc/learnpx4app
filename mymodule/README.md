@@ -22,6 +22,6 @@ nsh> help
 
  * mymodule 실행
 ```console
-nsh> mymodule start
+nsh> mymodule start | stop | status
 .....
 ```
