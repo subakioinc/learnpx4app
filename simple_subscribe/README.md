@@ -1,7 +1,7 @@
 ﻿# simple_subscribe
  * examples/simple_subscribe 폴더 만들기
    * simple_subscribe.cpp 만들기
-   * CMakeList.txt 생성
+   * CMakeLists.txt 생성
  * simple_subscribe 모듈 빌드 되도록 추가
    * Firmware/boards/px4/fmu-v3/default.cmake
    * 맨 마지막 줄에 simple_subscribe 추가
