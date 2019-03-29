@@ -6,6 +6,8 @@
  * Publish
  * QGC -> Mavlink -> Subscribe [이동](QGCReceiver/README.md)
 ## 설치
+ * Visual Studio Code 
+   * https://code.visualstudio.com/download
  * Windows
    * PuTTY
    * https://www.putty.org/
