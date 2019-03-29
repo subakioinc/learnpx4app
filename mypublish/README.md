@@ -1,7 +1,7 @@
 ﻿# mypublish
  * mission_subak topic 생성
-   * /msg/mission_subak.msg 위치시키기
-   * /msg/CMakeLists.txt에 추가하기
+   * Firmware/msg/mission_subak.msg 위치시키기
+   * Firmware/msg/CMakeLists.txt에 추가하기
  * examples/mypublish 폴더 만들기
    * mypub_main.cpp 만들기
    * CMakeList.txt 생성
