@@ -18,6 +18,7 @@
 > sudo apt-get install picocom
 ```
 ## 환경
+ * PX4 1.9.0 beta2 
 ```console
  > git clone https://github.com/PX4/Firmware
  > cd Firmware
