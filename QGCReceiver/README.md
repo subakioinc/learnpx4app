@@ -2,9 +2,9 @@
  * Widgets -> Custom Command
  * 'Load Custom Qml file' 버튼
  * 아래 파일 : mycustom.qml
- * mysubmodule_subscribe 실행
+ * mymodule_subscribe 실행
 ```console
-> mysubmodule_subscribe start
+> mymodule_subscribe start
 ```
 
 ```qml
