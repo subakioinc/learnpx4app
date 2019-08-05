@@ -1,4 +1,5 @@
-﻿# mypublish
+﻿# mymodule_subscribe
+ * mission_subak topic subscribe
  * mission_subak topic 생성
    * /msg/mission_subak.msg 위치시키기
    * /msg/CMakeLists.txt에 추가하기
