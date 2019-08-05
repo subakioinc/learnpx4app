@@ -1,7 +1,7 @@
 ﻿# mymodule
  * sensor topic subscribe
  # modify
- * publish mission_subak topic
+ * publish mission_subak topic (same as mypub module)
  * mission_subak topic 생성
    * /msg/mission_subak.msg 위치시키기
    * /msg/CMakeLists.txt에 추가하기
