@@ -56,6 +56,10 @@ Rectangle {
 #include <uORB/topics/mission_subak.h>
 
 orb_advert_t _mission_subak_pub{nullptr};
+```
+
+```
+#include <uORB/topics/mission_subak.h>
 
 uORB::Publication<misson_subak_s>	_mission_subak_pub{ORB_ID(mission_subak)};
 ```
@@ -83,3 +87,27 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 		return;
 	}
 ```
+```c++
+template <class T>
+void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const T &cmd_mavlink,
+		const vehicle_command_s &vehicle_command)
+{
+	bool target_ok = evaluate_target_ok(cmd_mavlink.command, cmd_mavlink.target_system, cmd_mavlink.target_component);
+
+	bool send_ack = true;
+	uint8_t result = vehicle_command_ack_s::VEHICLE_RESULT_ACCEPTED;
+
+	if(cmd_mavlink.command == 2011){
+//		int instance_id = 0;
+		struct mission_subak_s raw = {};
+		raw.x = 33;
+		raw.y = 22;
+		_mission_subak_s.publish(raw); //orb_publish_auto(ORB_ID(mission_subak), &_mission_subak_pub, &raw, &instance_id, ORB_PRIO_HIGH);
+		PX4_INFO("I received command from QGC!!! 2011");
+	}
+	if (!target_ok) {
+		acknowledge(msg->sysid, msg->compid, cmd_mavlink.command, vehicle_command_ack_s::VEHICLE_RESULT_FAILED);
+		return;
+	}
+```
+
