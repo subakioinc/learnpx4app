@@ -57,6 +57,7 @@ Rectangle {
 
 orb_advert_t _mission_subak_pub{nullptr};
 
+uORB::Publication<misson_subak_s>	_mission_subak_pub{ORB_ID(mission_subak)};
 ```
  * mavlink_receiver.cpp
 ```c++
