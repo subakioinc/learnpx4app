@@ -102,7 +102,7 @@ void MavlinkReceiver::handle_message_command_both(mavlink_message_t *msg, const 
 		struct mission_subak_s raw = {};
 		raw.x = 33;
 		raw.y = 22;
-		_mission_subak_s.publish(raw); //orb_publish_auto(ORB_ID(mission_subak), &_mission_subak_pub, &raw, &instance_id, ORB_PRIO_HIGH);
+		_mission_subak_pub.publish(raw); //orb_publish_auto(ORB_ID(mission_subak), &_mission_subak_pub, &raw, &instance_id, ORB_PRIO_HIGH);
 		PX4_INFO("I received command from QGC!!! 2011");
 	}
 	if (!target_ok) {
