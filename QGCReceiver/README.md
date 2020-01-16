@@ -61,7 +61,7 @@ orb_advert_t _mission_subak_pub{nullptr};
 ```
 #include <uORB/topics/mission_subak.h>
 
-uORB::Publication<misson_subak_s>	_mission_subak_pub{ORB_ID(mission_subak)};
+uORB::Publication<mission_subak_s>	_mission_subak_pub{ORB_ID(mission_subak)};
 ```
  * mavlink_receiver.cpp
 ```c++
