@@ -1,4 +1,5 @@
-﻿# Simple C App
+# Simple C App
+ * Firmware/src/exampels/ 디렉토리 아래 simple_c_app 디렉토리 생성 
  * simple_c_app.c 파일 생성
  * CMakeLists.txt 생성
  * simple c App을 빌드 되도록 추가
