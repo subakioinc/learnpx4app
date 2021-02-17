@@ -18,9 +18,9 @@
 > sudo apt-get install picocom
 ```
 ## 환경
- * PX4 1.9.0 beta2 
+ * PX4 1.11.3 beta2 
 ```console
- > git clone https://github.com/PX4/Firmware
+ > git clone https://github.com/PX4/PX4-Autopilot.git
  > cd Firmware
  > make px4_fmu-v3
 ```
