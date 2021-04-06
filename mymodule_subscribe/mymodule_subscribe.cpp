@@ -33,11 +33,10 @@
 
 #include "mymodule_subscribe.h"
 
-#include <px4_getopt.h>
-#include <px4_log.h>
-#include <px4_posix.h>
+#include <px4_platform_common/getopt.h>
+#include <px4_platform_common/log.h>
+#include <px4_platform_common/posix.h>
 
-#include <uORB/topics/parameter_update.h>
 #include <uORB/topics/mission_subak.h>
 
 
