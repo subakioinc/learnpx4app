@@ -3,7 +3,10 @@
    * Simple C
    * Simple C++
  * Subscribe
- * Publish
+   * simple_subscribe
+ * Pub/Sub
+   * mypublish
+   * mysubscribe
  * MyModule
  * QGC -> Mavlink -> Subscribe [이동](QGCReceiver/README.md)
 ## 설치
