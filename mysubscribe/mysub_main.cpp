@@ -1,12 +1,9 @@
 ﻿/**
- * @file mypub_main.cpp
+ * @file mysub_main.cpp
  * Minimal application example for PX4 autopilot
  *
  * @author jeyong <jeyong@subak.io>
  */
-// #include <px4_config.h>
-// #include <px4_tasks.h>
-// #include <px4_posix.h>
 #include <px4_platform_common/px4_config.h>
 #include <px4_platform_common/tasks.h>
 #include <px4_platform_common/posix.h>
