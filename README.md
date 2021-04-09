@@ -36,6 +36,10 @@
 ## git 버전 표시
  * ~/.bashrc 파일 맨 마지막에 추가
 ```sh
+> code ~/.bashrc
+```
+
+```sh
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
