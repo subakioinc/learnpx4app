@@ -21,12 +21,13 @@
 > sudo apt-get install picocom
 ```
 ## 환경
- * PX4 1.11.3
+ * PX4 1.12.3
 ```console
  > git clone https://github.com/PX4/PX4-Autopilot.git Firmware
  > cd Firmware
- > git checkout v1.11.3
- > make px4_fmu-v3
+ > git checkout v1.12.3
+ > make px4_fmu-v5
+ > make px4_sitl
 ```
 
 ## Console 연결
