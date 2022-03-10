@@ -34,10 +34,7 @@
 px4_add_module(
 	MODULE examples__mymodule_subscribe
 	MAIN mymodule_subscribe
-	STACK_MAIN 1024
 	SRCS
 		mymodule_subscribe.cpp
-	DEPENDS
-		modules__uORB
 	)
 
