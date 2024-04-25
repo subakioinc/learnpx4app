@@ -3,8 +3,9 @@
 * CMakeLists.txt 생성
 * Kconfig 생성
 * mission_subak topic 생성
-  * ./msg/mission_subak.msg 생성하기 ( mission_subak.msg )
+  * ./msg/MissionSubak.msg 생성하기
   * ./msg/CMakeLists.txt에 추가하기
+    * "MissionSubak.msg" 추가하기
 
 # 빌드 설정
 ```bash

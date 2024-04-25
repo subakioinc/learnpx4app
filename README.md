@@ -28,7 +28,7 @@
 ```console
 > git clone https://github.com/PX4/PX4-Autopilot
 > cd PX4-Autopilot
-> git checkout v1.13.2
+> git checkout v1.14.2
 > make px4_sitl jmavsim
 > make px4_fmu-v3
 ```
