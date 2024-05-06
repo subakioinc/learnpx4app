@@ -24,7 +24,7 @@
 > sudo apt-get install picocom
 ```
 ## 환경
- * PX4 1.13.x
+ * PX4 1.14.2
 ```console
 > git clone https://github.com/PX4/PX4-Autopilot
 > cd PX4-Autopilot
