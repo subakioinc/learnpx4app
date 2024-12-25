@@ -24,11 +24,11 @@
 > sudo apt-get install picocom
 ```
 ## 환경
- * PX4 1.14.2
+ * PX4 1.15.3
 ```console
 > git clone https://github.com/PX4/PX4-Autopilot
 > cd PX4-Autopilot
-> git checkout v1.14.2
+> git checkout v1.15.3
 > make px4_sitl jmavsim
 > make px4_fmu-v3
 ```
